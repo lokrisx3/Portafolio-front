@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import coffeeMug from '../assets/pixel-coffee-mug.png'
 import laptop from '../assets/pixel-laptop-profile.png'
-import plant from '../assets/pixel-plant.png'
 import realProfile from '../assets/foto-perfil-cut.png'
 import pixelProfile from '../assets/foto-perfil-pixel.png'
+import nightSpaceStudio from '../assets/night-space-studio.png'
 
 function PixelLaptop() {
   const [imageMode, setImageMode] = useState('generative')
@@ -20,13 +20,12 @@ function PixelLaptop() {
       <button className="screen-arrow screen-arrow-left" type="button" onClick={() => setImageMode('real')} aria-label="Mostrar foto real" aria-pressed={imageMode === 'real'}>‹</button>
       <button className="screen-arrow screen-arrow-right" type="button" onClick={() => setImageMode('generative')} aria-label="Mostrar retrato generativo" aria-pressed={imageMode === 'generative'}>›</button>
     </div>
-    <img className="pixel-plant" src={plant} alt="Planta pixel art" />
   </div>
 }
 
 function About() {
   return (
-    <section className="about-section" id="sobre-mi" aria-labelledby="about-title">
+    <section className="about-section" id="sobre-mi" aria-labelledby="about-title" style={{ '--studio-scene': `url(${nightSpaceStudio})` }}>
       <div className="about-copy">
         <p className="section-label">HOLA, SOY</p>
         <h1 id="about-title">CRISTIAN FRITZ<br />SEPÚLVEDA<span className="cursor" /></h1>
