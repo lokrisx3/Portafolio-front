@@ -1,28 +1,26 @@
 const navigation = [
-  { label: 'Inicio', target: 'inicio' },
-  { label: 'Sobre mí', target: 'sobre-mi' },
-  { label: 'Proyectos', target: 'proyectos' },
-  { label: 'Contacto', target: 'contacto' },
+  { label: 'INICIO', target: 'inicio' },
+  { label: 'SOBRE MÍ', target: 'sobre-mi' },
+  { label: 'PROYECTOS', target: 'proyectos' },
+  { label: 'HABILIDADES', target: 'habilidades' },
+  { label: 'CONTACTO', target: 'contacto' },
 ]
 
 function Header() {
-  const handleNavigation = (target) => {
-    document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
   return (
     <header className="site-header" id="inicio">
       <a className="site-brand" href="#inicio" aria-label="Ir al inicio">
-        CFS
+        <span>&gt;_</span><i />
       </a>
 
       <nav aria-label="Navegación principal">
-        {navigation.map(({ label, target }) => (
-          <button key={target} type="button" onClick={() => handleNavigation(target)}>
-            {label}
-          </button>
+        {navigation.map(({ label, target }, index) => (
+          <a className={index === 0 ? 'active' : ''} href={`#${target}`} key={target}>
+            <b>[0{index + 1}]</b> {label}
+          </a>
         ))}
       </nav>
+      <button className="theme-toggle" type="button" aria-label="Cambiar tema">☼</button>
     </header>
   )
 }
