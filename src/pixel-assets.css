@@ -6,9 +6,21 @@
   position: relative;
   background-color: #030611;
   background-image: linear-gradient(90deg, rgba(2, 5, 12, 0.72) 0%, rgba(2, 5, 12, 0.54) 38%, rgba(2, 5, 12, 0) 58%), var(--studio-scene);
-  background-position: center, left bottom;
+  background-position: center, center bottom;
   background-repeat: no-repeat;
-  background-size: cover, auto 140%;
+  /* The studio fills the entire hero, including ultra-wide screens. */
+  background-size: cover, cover;
+}
+
+.section-rgb-divider {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  height: 2px;
+  background: linear-gradient(90deg, #ff3b6b 0 7%, #ffb52e 20%, #67e85d 40%, #38cce6 62%, #7067f5 80%, #f258d5 100%);
+  box-shadow: 0 0 5px rgba(101, 210, 255, .6), 0 0 9px rgba(243, 70, 194, .3);
 }
 
 .pixel-mug {
@@ -96,4 +108,53 @@
     transform: scale(1.18);
     transform-origin: center top;
   }
+}
+
+/* The notebook is a composed pixel asset, so its internal layers must scale
+   together once the hero switches to a single column. */
+@media (max-width: 640px) {
+  .about-section {
+    background-position: center, center bottom;
+    background-size: cover, cover;
+  }
+
+  .generated-notebook {
+    top: 0;
+    left: 50%;
+    width: min(100%, 450px);
+    height: auto;
+    aspect-ratio: 450 / 408;
+    transform: translateX(-50%);
+  }
+
+  .pixel-mug {
+    left: auto;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    height: auto;
+  }
+
+  .real-profile-on-screen {
+    top: 10.5%;
+    left: 16.7%;
+    width: 66.7%;
+    height: 51.7%;
+  }
+
+  .screen-arrow {
+    top: 30%;
+    width: 4%;
+    height: 11.3%;
+    min-width: 15px;
+    min-height: 36px;
+    font-size: 21px;
+  }
+
+  .screen-arrow-left { left: 17.8%; }
+  .screen-arrow-right { right: 17.8%; }
+}
+
+@media (max-width: 390px) {
+  .pixel-mug { width: 32%; }
 }

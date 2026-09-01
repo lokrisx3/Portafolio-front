@@ -25,7 +25,7 @@ function PixelLaptop() {
 
 function About() {
   return (
-    <section className="about-section" id="sobre-mi" aria-labelledby="about-title" style={{ '--studio-scene': `url(${nightSpaceStudio})` }}>
+    <section className="about-section" aria-labelledby="about-title" style={{ '--studio-scene': `url(${nightSpaceStudio})` }}>
       <div className="about-copy">
         <p className="section-label">HOLA, SOY</p>
         <h1 id="about-title">CRISTIAN FRITZ<br />SEPÚLVEDA<span className="cursor" /></h1>
@@ -45,6 +45,7 @@ function About() {
       </div>
 
       <PixelLaptop />
+      <div className="section-rgb-divider" aria-hidden="true" />
     </section>
   )
 }
